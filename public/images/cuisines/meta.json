@@ -1,50 +1,50 @@
 {
-  "cypriot-meze-800": {
-    "img": "/images/cuisines/cypriot-meze-800.webp",
-    "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABQAgCdASoQAAwAA4BaJbACdAYvXbV77xHo0gAA/sKxIE44R3vmwZi+cNlcJvvHd9zGX52Tjy3LKsv/9Do70q1vM6wModFdsYJpXZNiax2SANZtWbuBbPHPNVX0iVs5CTuuDjpbiMUUClXreOdoruLwS4AAAA=="
-  },
-  "cypriot-meze": {
-    "img": "/images/cuisines/cypriot-meze.webp",
-    "blurDataURL": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABQAgCdASoQAAwAA4BaJbACdAYvXbV77xHo0gAA/sKxIE44R3vmwZi+cNlcJvvHd9zGX52Tjy3LKsv/9Do70q1vM6wModFdsYJpXZNiax2SANZtWbuBbPHPNVX0iVs5CTuuDjpbiMUUClXreOdoruLwS4AAAA=="
-  },
-  "greek-800": {
-    "img": "/images/cuisines/greek-800.webp",
-    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoQABAAA4BaJYwCdADvBsSjdl8IAP7voqB6VCfaJ4fqNg+i1wIaXfpUgVwD6SkRauh2f/fmnCh6BuiccOdh/nWRG0ywozTaqmMpv4oA3gxC1MoD/5MQAA=="
-  },
-  "greek": {
-    "img": "/images/cuisines/greek.webp",
-    "blurDataURL": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABQAgCdASoQAAwAA4BaJQBOgMWbxouRXdfniKAA/jRvRCb6hHmYSSjqE9sYJwGVSewz12bYAUAbnz3ncSdXSy1b+DbZbRnCSD0POx2fr1CWK74Xu+zXNrdokYGP7dWJ/hfatAcfy59sdKgA"
-  },
-  "grill-souvlaki-800": {
-    "img": "/images/cuisines/grill-souvlaki-800.webp",
-    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAQCdASoQAAwAA4BaJQBOgMVklkcnsADNwTMAmFbq5bI//7iNA2kPh0vNT9rKi9lUAtCvMMkwqoTciyZN2Sd4MYhJ5WB8w1b2Loc7XJ+n0Ox7XAAAAA=="
-  },
-  "grill-souvlaki": {
-    "img": "/images/cuisines/grill-souvlaki.webp",
-    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwAQCdASoQAAwAA4BaJbACdACqvmT9dAAA/sB9LX8e/iZvbcGlpY9Qf7WbpXeUFGIDaPFGlDcEJGlfdq8EivTs8gUPvSgLaWXuj1AP3+dy7lGE1Zp8PvJ2SWiaiqcX4zHDcAAA"
-  },
-  "mediterranean-800": {
-    "img": "/images/cuisines/mediterranean-800.webp",
-    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwAgCdASoQAAsAA4BaJbACdAYstNwcZqiUgAD+V2iZuF6jzaMWxtGdcoXCUj/N1FZ+/4a3t21kYtzkBtEl+9wKCLs88HbkfAA="
-  },
-  "mediterranean": {
-    "img": "/images/cuisines/mediterranean.webp",
-    "blurDataURL": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwAgCdASoQAAsAA4BaJbACdAYstNwcZqiUgAD+V2iZuF6jzaMWxtGdcoXCUj/N1FZ+/4a3t21kYtzkBtEl+9wKCLs88HbkfAA="
+  "seafood": {
+    "img": "/images/cuisines/seafood.webp",
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoQAAsAA4BaJQBOgB4GP08YPgAAzjWdaguX6CIcGomct7HngqCgtMpe8VZXu0hj/A1H2ysYKGbWoe/sA5itQAU2ygfSDaLLDT0coY35UwwAAA=="
   },
   "seafood-800": {
     "img": "/images/cuisines/seafood-800.webp",
-    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACwAwCdASoQABEAPu1iqU2ppaOiMAgBMB2JQBOmUABRqxam9YFBsAD94pYm0s1b1PRp2WuAIb+V73NzWi4LQqAcY9yNt4rXz0hMJuYZSDucxmAYOhjT7BUFJ6mbhjEn83mACTvGqnPr1xnKNQaBS3wA"
+    "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAQCdASoQAAsAA4BaJQBOgB4GP08YPgAAzjWdaguX6CIcGomct7HngqCgtMpe8VZXu0hj/A1H2ysYKGbWoe/sA5itQAU2ygfSDaLLDT0coY35UwwAAA=="
   },
-  "seafood": {
-    "img": "/images/cuisines/seafood.webp",
-    "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAwAgCdASoQAAsAA4BaJbACdAYtfVK5MSyiAAD+4KuPMYD5FZWmzLQtI2uwrj8nWT9EsXDkPc3DiD2+RzZrDdq3jpwbuyNVWZQNH7Sno9zYK+8X+R7AU2WFafl/6PGS7IO8PKyErW+H83VckTIk1XuH8BfYoAAA"
+  "cypriot-meze": {
+    "img": "/images/cuisines/cypriot-meze.webp",
+    "blurDataURL": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAADQAwCdASoQABgAPu1iqU2ppaOiMAgBMB2JQBdgA8G0rPH1UXUpFcgA/VOYTz7tiRVUzer6tuRh6q3XBx1Uo0Ms0FPusGzMyXf0oYNIyU6up+VoYO7WhtFFPYX29Y3zHa2b0+uKPGfVrDUfk1vSTf5S6aR3Ro4IiXS7m+wHSJgkq4CdBdCuLWVOg8Py4MUyvsm4zKXaCVVcCdqgHWuwWLoAAAA="
   },
-  "taverna-800": {
-    "img": "/images/cuisines/taverna-800.webp",
-    "blurDataURL": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoQAAwAA4BaJbACdAYvrOAraHbQAP7HZT3HiJ06Wzelzcbej+j+idoe7wirzptxwz7y3hCzrb8vs+3JSY7+ODD0B7aQgcuD/OHdnnWj3pd2tDwAAAA="
+  "cypriot-meze-800": {
+    "img": "/images/cuisines/cypriot-meze-800.webp",
+    "blurDataURL": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAADQAwCdASoQABgAPu1iqU2ppaOiMAgBMB2JQBdgA8G0rPH1UXUpFcgA/VOYTz7tiRVUzer6tuRh6q3XBx1Uo0Ms0FPusGzMyXf0oYNIyU6up+VoYO7WhtFFPYX29Y3zHa2b0+uKPGfVrDUfk1vSTf5S6aR3Ro4IiXS7m+wHSJgkq4CdBdCuLWVOg8Py4MUyvsm4zKXaCVVcCdqgHWuwWLoAAAA="
   },
   "taverna": {
     "img": "/images/cuisines/taverna.webp",
-    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAABwAgCdASoQAAsAA4BaJQBOj+ADdVEuZdI78YyAAP7UsFtZluBKtaVjmwsEEz67abWiVyMSZ0OZRiXJaTon73KQ9k/l+1Zj0NFbX7nYcEDoIBzXZgKuBQAA"
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABwAgCdASoQAAsAA4BaJQBOj+ADMBbOimSal4SoAPRo/z5BDGQuuhZ8F6jeHpbwSz2n//Wlmm7e6f6jj4vfW1cqBMwgoZqbZf1jOSVBphgJQJrVDpsZYYpgcJbFRqHXHQA10U88pim0AA=="
+  },
+  "taverna-800": {
+    "img": "/images/cuisines/taverna-800.webp",
+    "blurDataURL": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABwAgCdASoQAAsAA4BaJQBOj+ADMBbOimSal4SoAPRo/z5BDGQuuhZ8F6jeHpbwSz2n//Wlmm7e6f6jj4vfW1cqBMwgoZqbZf1jOSVBphgJQJrVDpsZYYpgcJbFRqHXHQA10U88pim0AA=="
+  },
+  "grill-souvlaki": {
+    "img": "/images/cuisines/grill-souvlaki.webp",
+    "blurDataURL": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAABQBACdASoQABkAPu1iqU2ppaOiMAgBMB2JQBadMWgb2Q5hJP4FKatTXeIAAP7DHYjz++D2HLCxNSk9aC4bAHYlGud4dBg1P/1Hm9DkCiDNpv5KZA/uu73eakYyA7784susDkSbDcc75lOnDCxSvf1EtuZnXZWqDspabKb3V35IuhuwyhRO7Ye9nbuRuYvbnuY4KoWGnFbG+C1NxwJoMbp0w7HMVemicwAAAA=="
+  },
+  "grill-souvlaki-800": {
+    "img": "/images/cuisines/grill-souvlaki-800.webp",
+    "blurDataURL": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAABQBACdASoQABkAPu1iqU2ppaOiMAgBMB2JQBadMWgb2Q5hJP4FKatTXeIAAP7DHYjz++D2HLCxNSk9aC4bAHYlGud4dBg1P/1Hm9DkCiDNpv5KZA/uu73eakYyA7784susDkSbDcc75lOnDCxSvf1EtuZnXZWqDspabKb3V35IuhuwyhRO7Ye9nbuRuYvbnuY4KoWGnFbG+C1NxwJoMbp0w7HMVemicwAAAA=="
+  },
+  "greek": {
+    "img": "/images/cuisines/greek.webp",
+    "blurDataURL": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQAJ4AoLxCYtUVeac1N4AAPyy+IiVwhcrIoD7+/tBTAAY87YlO46JYoJpUYKSftAy3IUIM4EZqrseUDEBJdIrYd7Krkwm+YUM+uzOGheJ8OrbvG2rj4/3ruRpgmO2nWv8rDi5ZwmviDyX0pm4oHx2tYyvt6Do3ni/Ie0P79e1WAXf9krjzHd+0RFErHuKgAA="
+  },
+  "greek-800": {
+    "img": "/images/cuisines/greek-800.webp",
+    "blurDataURL": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQAJ4AoLxCYtUVeac1N4AAPyy+IiVwhcrIoD7+/tBTAAY87YlO46JYoJpUYKSftAy3IUIM4EZqrseUDEBJdIrYd7Krkwm+YUM+uzOGheJ8OrbvG2rj4/3ruRpgmO2nWv8rDi5ZwmviDyX0pm4oHx2tYyvt6Do3ni/Ie0P79e1WAXf9krjzHd+0RFErHuKgAA="
+  },
+  "mediterranean": {
+    "img": "/images/cuisines/mediterranean.webp",
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAgCdASoQAAsAA4BaJZACdAYvDn6WZE6m6dQAAP7ka1kst5NwsIKfdY9QUj5xOd6Pd2IfI1D9Z4gbRfr7XtKM+JV5i3IQ+cGC68V19NG9D6kdo6jH6tooEgvfMqITaPBVkEpAz8P1gNEYeww2TiUAAAA="
+  },
+  "mediterranean-800": {
+    "img": "/images/cuisines/mediterranean-800.webp",
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwAgCdASoQAAsAA4BaJZACdAYvDn6WZE6m6dQAAP7ka1kst5NwsIKfdY9QUj5xOd6Pd2IfI1D9Z4gbRfr7XtKM+JV5i3IQ+cGC68V19NG9D6kdo6jH6tooEgvfMqITaPBVkEpAz8P1gNEYeww2TiUAAAA="
   }
 }

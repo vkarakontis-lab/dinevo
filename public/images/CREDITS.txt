@@ -1,10 +1,11 @@
 Hero photo: Fig Tree beach, Protaras — dronepicr, CC BY 2.0, via Wikimedia Commons
 https://commons.wikimedia.org/wiki/File:Fig_Tree_beach_Protaras_(29851923968).jpg
 
-Cuisine card photos are the same CC-licensed Wikimedia images as public/demo (see public/demo/CREDITS.txt).
-
-Cuisine card replacements (2026-08-25):
-public/images/cuisines/seafood.webp — Χταποδάκι στα κάρβουνα (4462751743).jpg — Klearchos Kapoutsis from Santorini, Greece — CC BY 2.0 — via Wikimedia Commons
-public/images/cuisines/taverna.webp — Grilled haloumi cheese in Cyprus.JPG — Anatoliy Smaga — CC BY-SA 4.0 — via Wikimedia Commons
-public/images/cuisines/grill-souvlaki.webp — Greek chicken souvlaki merida.jpg — Leeturtle — CC BY-SA 4.0 — via Wikimedia Commons
-public/images/cuisines/greek.webp — Moussaka and Greek Salad at a taverna in Greece.jpg — Vouliagmeni — CC BY-SA 4.0 — via Wikimedia Commons
+Cuisine category tiles — Pexels (Pexels License: free for commercial use,
+no attribution required; listed here for provenance).
+  seafood.webp — Pexels #37068830 — Grilled octopus plated on textured ceramic
+  cypriot-meze.webp — Pexels #38875935 — Greek meze spread with salad and lemon
+  taverna.webp — Pexels #5864346 — Baked moussaka on a blue ceramic plate
+  grill-souvlaki.webp — Pexels #17849254 — Souvlaki, pita and tzatziki on a rustic platter
+  greek.webp — Pexels #13054478 — Traditional Greek table laid with several dishes
+  mediterranean.webp — Pexels #27177296 — Overhead Mediterranean spread
