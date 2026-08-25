@@ -2,6 +2,9 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { getPathname } from "@/i18n/navigation";
 import { FilterBar, type FilterOption } from "./filter-bar";
 import { ListingView } from "./listing-view";
+import { ListingHeader, type AreaPill, type Crumb } from "./listing-header";
+import { EmptyResults } from "./empty-results";
+import { ClearFiltersButton } from "./clear-filters-button";
 import { RestaurantCard } from "@/components/restaurant/restaurant-card";
 import {
   cuisines as allCuisines,
@@ -116,7 +119,38 @@ export async function RestaurantListing({
       ? { lat: markers[0].lat, lng: markers[0].lng }
       : { lat: 35.0, lng: 33.2 };
 
+  // Breadcrumb trail: Home > Region > Area (or Home > Cuisine).
+  const crumbs: Crumb[] = [{ label: t("nav.home"), href: "/" }];
+  if (region) {
+    crumbs.push({
+      label: localized(region.name, locale),
+      // The region itself is the current page unless we're inside one of its areas.
+      href: areaSlug ? `/${country.slug}/${region.slug}` : undefined,
+    });
+  }
+  if (areaSlug || cuisineSlug) crumbs.push({ label: placeLabel });
+
+  // When the pill row is on screen it already does the area filter's job —
+  // showing both leaves two "All areas" controls stacked on top of each other.
+  const areaPills: AreaPill[] = (region?.areas ?? []).map((a) => ({
+    slug: a.slug,
+    label: localized(a.name, locale),
+    href: `/${country.slug}/${region!.slug}/${a.slug}`,
+  }));
+
+  const showAreaPills = !cuisineSlug && areaPills.length > 0;
+
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: c.label,
+      ...(c.href ? { item: `${siteUrl}/${locale}${c.href === "/" ? "" : c.href}` } : {}),
+    })),
+  };
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -128,31 +162,49 @@ export async function RestaurantListing({
     })),
   };
 
+  const title = t("search.resultsTitle", {
+    count: restaurants.length,
+    place: placeLabel,
+  });
+
   return (
-    <div className="py-8">
+    <div className="pb-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
-      <h1 className="font-heading text-3xl font-bold">
-        {t("search.resultsTitle", {
-          count: restaurants.length,
-          place: placeLabel,
-        })}
-      </h1>
-      <div className="mt-4">
+
+      <ListingHeader
+        crumbs={crumbs}
+        crumbLabel={t("search.breadcrumb")}
+        title={title}
+        areas={showAreaPills ? areaPills : undefined}
+        activeAreaSlug={areaSlug ?? searchParams.area}
+        allAreasHref={region ? `/${country.slug}/${region.slug}` : undefined}
+        allAreasLabel={t("search.allAreas")}
+      />
+
+      <div className="mt-6">
         <FilterBar
           areas={areaOptions}
           cuisines={cuisineSlug ? [] : cuisineOptions}
           features={featureOptions}
-          showAreaFilter={showAreaFilter && !areaSlug && areaOptions.length > 0}
+          showAreaFilter={
+            showAreaFilter && !areaSlug && areaOptions.length > 0 && !showAreaPills
+          }
         />
       </div>
-      <div className="mt-6">
+
+      <div className="mt-8">
         {restaurants.length === 0 ? (
-          <p className="rounded-xl border border-border bg-card p-8 text-center text-muted-foreground">
-            {t("search.noResults")}
-          </p>
+          <EmptyResults
+            title={t("search.noResults")}
+            action={<ClearFiltersButton label={t("search.clearFilters")} />}
+          />
         ) : (
           <ListingView markers={markers} center={center}>
             {restaurants.map((r, i) => (

@@ -58,12 +58,15 @@ export default function MapView({
     for (const m of markers) {
       const popup = new maplibregl.Popup({ offset: 18, closeButton: false })
         .setHTML(
-          `<a href="${m.href}" style="font-weight:600;color:#1f4e79;text-decoration:none">${m.name}</a>` +
+          // Popup markup is injected by MapLibre, outside React and outside
+          // Tailwind's reach, so the brand colours are inlined here. Keep them
+          // in step with --coral / --muted-foreground in globals.css.
+          `<a href="${m.href}" style="font-weight:700;color:#ff5636;text-decoration:none;font-size:14px">${m.name}</a>` +
             (m.subtitle
-              ? `<div style="color:#6d675d;font-size:12px">${m.subtitle}</div>`
+              ? `<div style="color:#6a6672;font-size:12px;margin-top:2px">${m.subtitle}</div>`
               : ""),
         );
-      const marker = new maplibregl.Marker({ color: "#c8663a" })
+      const marker = new maplibregl.Marker({ color: "#ff5636" })
         .setLngLat([m.lng, m.lat])
         .setPopup(popup)
         .addTo(map);
@@ -80,7 +83,7 @@ export default function MapView({
   return (
     <div
       ref={containerRef}
-      className={`${heightClass} w-full overflow-hidden rounded-xl border border-border`}
+      className={`${heightClass} w-full overflow-hidden rounded-3xl border border-border shadow-soft`}
       role="region"
       aria-label={label}
     />

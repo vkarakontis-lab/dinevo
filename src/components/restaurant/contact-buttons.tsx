@@ -3,11 +3,15 @@ import {
   Camera,
   ExternalLink,
   MapPin,
+  MessageCircle,
   Phone,
   UtensilsCrossed,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import type { RestaurantProfile } from "@/lib/data/restaurants";
+import { cn } from "@/lib/utils";
+
+const PILL =
+  "inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-semibold transition-colors";
 
 // WhatsApp is how Cyprus books tables by phone — always offer it when set.
 export async function ContactButtons({
@@ -24,70 +28,81 @@ export async function ContactButtons({
   return (
     <div className="flex flex-wrap gap-2">
       {restaurant.phone ? (
-        <Button asChild variant="outline" size="sm">
-          <a href={`tel:${restaurant.phone}`}>
-            <Phone data-icon="inline-start" />
-            {t("restaurant.call")}
-          </a>
-        </Button>
-      ) : null}
-      {wa ? (
-        <Button asChild variant="outline" size="sm">
-          <a
-            href={`https://wa.me/${wa}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t("restaurant.whatsapp")}
-          </a>
-        </Button>
-      ) : null}
-      {restaurant.menu_url ? (
-        <Button asChild variant="outline" size="sm">
-          <a
-            href={restaurant.menu_url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <UtensilsCrossed data-icon="inline-start" />
-            {t("restaurant.viewMenu")}
-          </a>
-        </Button>
-      ) : null}
-      {restaurant.website ? (
-        <Button asChild variant="outline" size="sm">
-          <a
-            href={restaurant.website}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <ExternalLink data-icon="inline-start" />
-            {t("restaurant.website")}
-          </a>
-        </Button>
-      ) : null}
-      {restaurant.instagram ? (
-        <Button asChild variant="outline" size="sm">
-          <a
-            href={restaurant.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Camera data-icon="inline-start" />
-            Instagram
-          </a>
-        </Button>
-      ) : null}
-      <Button asChild variant="outline" size="sm">
         <a
-          href={`https://www.google.com/maps/dir/?api=1&destination=${restaurant.lat},${restaurant.lng}`}
+          href={`tel:${restaurant.phone}`}
+          className={cn(
+            PILL,
+            "border-coral/30 bg-coral-soft text-coral hover:bg-coral/15",
+          )}
+        >
+          <Phone className="size-4" aria-hidden />
+          {t("restaurant.call")}
+        </a>
+      ) : null}
+
+      {wa ? (
+        <a
+          href={`https://wa.me/${wa}`}
           target="_blank"
           rel="noopener noreferrer"
+          className={cn(
+            PILL,
+            "border-mint/30 bg-mint-soft text-mint hover:bg-mint/15",
+          )}
         >
-          <MapPin data-icon="inline-start" />
-          {t("restaurant.getDirections")}
+          <MessageCircle className="size-4" aria-hidden />
+          {t("restaurant.whatsapp")}
         </a>
-      </Button>
+      ) : null}
+
+      <a
+        href={`https://www.google.com/maps/dir/?api=1&destination=${restaurant.lat},${restaurant.lng}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          PILL,
+          "border-sea/30 bg-sea-soft text-sea hover:bg-sea/15",
+        )}
+      >
+        <MapPin className="size-4" aria-hidden />
+        {t("restaurant.getDirections")}
+      </a>
+
+      {restaurant.menu_url ? (
+        <a
+          href={restaurant.menu_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(PILL, "border-border bg-card hover:bg-muted")}
+        >
+          <UtensilsCrossed className="size-4" aria-hidden />
+          {t("restaurant.viewMenu")}
+        </a>
+      ) : null}
+
+      {restaurant.website ? (
+        <a
+          href={restaurant.website}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(PILL, "border-border bg-card hover:bg-muted")}
+        >
+          <ExternalLink className="size-4" aria-hidden />
+          {t("restaurant.website")}
+        </a>
+      ) : null}
+
+      {restaurant.instagram ? (
+        <a
+          href={restaurant.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(PILL, "border-border bg-card hover:bg-muted")}
+        >
+          <Camera className="size-4" aria-hidden />
+          Instagram
+        </a>
+      ) : null}
     </div>
   );
 }

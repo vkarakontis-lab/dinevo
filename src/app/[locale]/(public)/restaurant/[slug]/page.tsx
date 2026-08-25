@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import dynamicImport from "next/dynamic";
+import { ChevronRight, MapPin } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Gallery } from "@/components/restaurant/gallery";
+import { OpenNowPill } from "@/components/restaurant/open-now-pill";
 import { HoursBlock } from "@/components/restaurant/hours-block";
 import { ContactButtons } from "@/components/restaurant/contact-buttons";
 import { PriceBand } from "@/components/restaurant/price-band";
@@ -172,67 +175,113 @@ export default async function RestaurantPage({ params }: Props) {
     },
   };
 
+  const placeLabel = areaCtx
+    ? localized(areaCtx.area.name, locale)
+    : regionCtx
+      ? localized(regionCtx.region.name, locale)
+      : "";
+  const priceLabel = t("restaurant.priceBand", {
+    band: restaurant.price_band,
+  });
+  const ratingLabel =
+    restaurant.rating != null
+      ? t("restaurant.rating", {
+          rating: restaurant.rating,
+          count: restaurant.review_count,
+        })
+      : "";
+
   return (
-    <div className="py-6">
+    <div className="pt-5 pb-24 lg:pb-12">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      {/* Breadcrumb — also the fastest way back to the area listing */}
+      <nav aria-label={t("search.breadcrumb")} className="mb-4">
+        <ol className="flex flex-wrap items-center gap-1 text-sm text-muted-foreground">
+          <li>
+            <Link href="/" className="transition-colors hover:text-coral">
+              {t("nav.home")}
+            </Link>
+          </li>
+          {regionCtx ? (
+            <li className="flex items-center gap-1">
+              <ChevronRight className="size-3.5 shrink-0" aria-hidden />
+              <Link
+                href={`/${countrySlug}/${regionCtx.region.slug}`}
+                className="transition-colors hover:text-coral"
+              >
+                {localized(regionCtx.region.name, locale)}
+              </Link>
+            </li>
+          ) : null}
+          <li className="flex items-center gap-1">
+            <ChevronRight className="size-3.5 shrink-0" aria-hidden />
+            <span aria-current="page" className="text-foreground">
+              {tr?.name}
+            </span>
+          </li>
+        </ol>
+      </nav>
+
       <Gallery photos={restaurant.photos} restaurantName={tr?.name ?? slug} />
 
-      <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_380px]">
-        <div className="space-y-8">
+      <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_390px]">
+        <div className="min-w-0 space-y-8">
           <header>
-            <h1 className="font-heading text-3xl font-bold sm:text-4xl">
+            <h1 className="font-display text-3xl leading-tight font-extrabold text-balance sm:text-4xl lg:text-5xl">
               {tr?.name}
             </h1>
-            <p className="mt-2 flex flex-wrap items-center gap-2 text-muted-foreground">
-              {areaCtx ? (
-                <span>{localized(areaCtx.area.name, locale)}</span>
-              ) : regionCtx ? (
-                <span>{localized(regionCtx.region.name, locale)}</span>
+
+            {/* One metadata row: place, price, rating, open state */}
+            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
+              {placeLabel ? (
+                <span className="inline-flex items-center gap-1.5 text-muted-foreground">
+                  <MapPin className="size-4 text-sea" aria-hidden />
+                  {placeLabel}
+                </span>
               ) : null}
-              <span aria-hidden>·</span>
-              <PriceBand band={restaurant.price_band} />
-              <span className="text-sm">
-                {t("restaurant.priceBand", { band: restaurant.price_band })}
-              </span>
-              {/* the text next to it is the accessible label */}
-            </p>
-            {restaurant.rating != null ? (
-              <div className="mt-2">
+              <PriceBand band={restaurant.price_band} label={priceLabel} />
+              {restaurant.rating != null ? (
                 <RatingStars
                   rating={restaurant.rating}
                   reviewCount={restaurant.review_count}
-                  label={t("restaurant.rating", {
-                    rating: restaurant.rating,
-                    count: restaurant.review_count,
-                  })}
+                  label={ratingLabel}
                 />
+              ) : null}
+              <OpenNowPill
+                hours={restaurant.opening_hours}
+                timezone={restaurant.timezone}
+              />
+            </div>
+
+            {tr?.tagline ? (
+              <p className="mt-4 text-lg text-pretty">{tr.tagline}</p>
+            ) : null}
+
+            {cuisineBadges.length > 0 ? (
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {cuisineBadges.map((c) => (
+                  <Badge key={c!.slug} variant="secondary">
+                    {localized(c!.name, locale)}
+                  </Badge>
+                ))}
               </div>
             ) : null}
-            {tr?.tagline ? (
-              <p className="mt-3 text-lg text-balance">{tr.tagline}</p>
-            ) : null}
-            <div className="mt-3 flex flex-wrap gap-1.5">
-              {cuisineBadges.map((c) => (
-                <Badge key={c!.slug} variant="secondary">
-                  {localized(c!.name, locale)}
-                </Badge>
-              ))}
-            </div>
           </header>
 
           {tr?.description ? (
-            <section>
-              <h2 className="font-heading text-xl font-semibold">
+            <section className="rounded-3xl border border-border bg-card p-5 shadow-soft sm:p-6">
+              <h2 className="font-display text-xl font-bold">
                 {t("restaurant.about")}
               </h2>
-              <p className="mt-2 leading-relaxed whitespace-pre-line">
+              <p className="mt-3 leading-relaxed whitespace-pre-line">
                 {tr.description}
               </p>
               {tr.is_machine_translated ? (
-                <p className="mt-2 text-xs text-muted-foreground italic">
+                <p className="mt-3 text-xs text-muted-foreground italic">
                   {t("restaurant.machineTranslatedNotice")}
                 </p>
               ) : null}
@@ -241,18 +290,18 @@ export default async function RestaurantPage({ params }: Props) {
 
           {featureList.length > 0 ? (
             <section>
-              <h2 className="font-heading text-xl font-semibold">
+              <h2 className="font-display text-xl font-bold">
                 {t("restaurant.goodToKnow")}
               </h2>
-              <ul className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
+              <ul className="mt-4 flex flex-wrap gap-2">
                 {featureList.map((f) => {
                   const Icon = featureIcon(f!.icon);
                   return (
                     <li
                       key={f!.slug}
-                      className="flex items-center gap-2 text-sm"
+                      className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2.5 text-sm font-medium shadow-soft"
                     >
-                      <Icon className="size-4 text-olive" aria-hidden />
+                      <Icon className="size-4 text-coral" aria-hidden />
                       {localized(f!.name, locale)}
                     </li>
                   );
@@ -266,41 +315,41 @@ export default async function RestaurantPage({ params }: Props) {
             timezone={restaurant.timezone}
           />
 
-          <section>
-            <h2 className="font-heading text-xl font-semibold">
-              {t("restaurant.location")}
-            </h2>
-            {restaurant.address_line ? (
-              <p className="mt-2 text-sm text-muted-foreground">
-                {restaurant.address_line}
-                {restaurant.postcode ? `, ${restaurant.postcode}` : ""}
-              </p>
-            ) : null}
-            <div className="mt-3">
-              <MapView
-                markers={[
-                  {
-                    id: restaurant.id,
-                    slug: restaurant.slug,
-                    name: tr?.name ?? "",
-                    lat: restaurant.lat,
-                    lng: restaurant.lng,
-                    href: pageUrl,
-                  },
-                ]}
-                center={{ lat: restaurant.lat, lng: restaurant.lng }}
-                heightClass="h-64"
-                zoom={14}
-              />
+          <section className="overflow-hidden rounded-3xl border border-border bg-card shadow-soft">
+            <div className="p-5 sm:p-6">
+              <h2 className="font-display text-xl font-bold">
+                {t("restaurant.location")}
+              </h2>
+              {restaurant.address_line ? (
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {restaurant.address_line}
+                  {restaurant.postcode ? `, ${restaurant.postcode}` : ""}
+                </p>
+              ) : null}
             </div>
-            <div className="mt-3">
+            <MapView
+              markers={[
+                {
+                  id: restaurant.id,
+                slug: restaurant.slug,
+                  name: tr?.name ?? "",
+                  lat: restaurant.lat,
+                  lng: restaurant.lng,
+                  href: pageUrl,
+                },
+              ]}
+              center={{ lat: restaurant.lat, lng: restaurant.lng }}
+              heightClass="h-64"
+              zoom={14}
+            />
+            <div className="p-5 sm:p-6">
               <ContactButtons restaurant={restaurant} />
             </div>
           </section>
         </div>
 
         <aside>
-          <div className="lg:sticky lg:top-20">
+          <div className="lg:sticky lg:top-24">
             <BookingWidget
               restaurant={{
                 id: restaurant.id,
@@ -321,10 +370,10 @@ export default async function RestaurantPage({ params }: Props) {
 
       {nearby.length > 0 ? (
         <section className="mt-16">
-          <h2 className="font-heading text-2xl font-semibold">
+          <h2 className="font-display text-2xl font-extrabold sm:text-3xl">
             {t("restaurant.similarNearby")}
           </h2>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {nearby.map((r) => (
               <RestaurantCard
                 key={r.id}
@@ -336,6 +385,7 @@ export default async function RestaurantPage({ params }: Props) {
           </div>
         </section>
       ) : null}
+
     </div>
   );
 }

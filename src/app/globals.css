@@ -107,8 +107,9 @@
 :root {
   color-scheme: light;
 
-  /* Surfaces — near-white with a whisper of warmth, so colour does the talking */
-  --background: #fffcfa;
+  /* Surfaces — plain white page; cards separate by hairline + soft shadow,
+     and the muted/secondary greys carry insets. */
+  --background: #ffffff;
   --foreground: #0b0d12;
   --card: #ffffff;
   --card-foreground: #0b0d12;

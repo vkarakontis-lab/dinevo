@@ -32,3 +32,18 @@ export function shortDay(
     locale: dfnsLocale(locale),
   });
 }
+
+/**
+ * Weekday abbreviation only ("Fri" / "Παρ"), for the booking date chips where
+ * the day number is rendered separately underneath. `shortDay` includes the
+ * date, which would read as "Fri 28 Aug" stacked over "28".
+ */
+export function weekdayShort(
+  iso: string | Date,
+  timezone: string,
+  locale: string,
+): string {
+  return formatInTimeZone(iso, timezone, "EEE", {
+    locale: dfnsLocale(locale),
+  });
+}

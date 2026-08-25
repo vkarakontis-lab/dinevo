@@ -92,7 +92,11 @@
     "sortDistance": "Distance",
     "sortPrice": "Price",
     "distanceAway": "{km} km away",
-    "clearFilters": "Clear filters"
+    "clearFilters": "Clear filters",
+    "allAreas": "All areas",
+    "breadcrumb": "Breadcrumb",
+    "activeFilters": "Active filters",
+    "removeFilter": "Remove filter: {label}"
   },
   "restaurant": {
     "about": "About",
@@ -123,7 +127,8 @@
     "lastSeating": "Last seating {time}",
     "similarNearby": "More places nearby",
     "machineTranslatedNotice": "This description was translated automatically.",
-    "rating": "Rated {rating} out of 5 from {count, plural, one {# review} other {# reviews}}"
+    "rating": "Rated {rating} out of 5 from {count, plural, one {# review} other {# reviews}}",
+    "viewAllPhotos": "View all photos"
   },
   "booking": {
     "yourDetails": "Your details",
@@ -264,7 +269,21 @@
     "contactPhone": "Phone",
     "message": "Anything we should know? (area, cuisine, seats)",
     "send": "Request a listing",
-    "sent": "Thanks — we'll be in touch within a day or two."
+    "sent": "Thanks — we'll be in touch within a day or two.",
+    "eyebrow": "For restaurants",
+    "bullet4": "Automatic reminders the day before, so fewer tables sit empty.",
+    "bullet5": "Your listing runs in English and Greek — tourists and locals both find you.",
+    "bullet6": "Guest details stay yours: name, email and phone on every booking.",
+    "howTitle": "Getting listed",
+    "howLead": "No integration, no hardware, no setup fee.",
+    "howStep1Title": "Send your details",
+    "howStep1Body": "Fill in the form below — name, area, roughly how many seats.",
+    "howStep2Title": "We build your page",
+    "howStep2Body": "Photos, hours, service periods and tables, in both languages.",
+    "howStep3Title": "Take bookings",
+    "howStep3Body": "You approve it, it goes live, and the dashboard is yours.",
+    "ctaForm": "Get listed",
+    "ctaDashboard": "Restaurant sign in"
   },
   "footer": {
     "tagline": "Restaurants worth booking, across {country}.",

@@ -27,7 +27,7 @@ import {
 import { fetchAvailability, createBooking } from "@/lib/booking/actions";
 import type { BookingErrorCode } from "@/lib/booking/errors";
 import type { AvailabilitySlot } from "@/lib/supabase/database.types";
-import { shortDay } from "@/lib/dates";
+import { shortDay, weekdayShort } from "@/lib/dates";
 import { cn } from "@/lib/utils";
 
 export type BookingWidgetRestaurant = {
@@ -262,19 +262,21 @@ function WidgetBody({ restaurant, initial }: Props) {
       ? t("common.today")
       : i === 1
         ? t("common.tomorrow")
-        : shortDay(`${d}T12:00:00Z`, restaurant.timezone, locale);
+        : weekdayShort(`${d}T12:00:00Z`, restaurant.timezone, locale);
 
   return (
     <div className="space-y-5">
       {/* Party stepper */}
       <div>
-        <span className="text-sm font-medium">{t("restaurant.chooseGuests")}</span>
-        <div className="mt-1.5 flex items-center gap-3">
+        <span className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+          {t("restaurant.chooseGuests")}
+        </span>
+        <div className="mt-2 inline-flex items-center gap-1 rounded-full border border-border bg-card p-1">
           <Button
             type="button"
-            variant="outline"
+            variant="ghost"
             size="icon"
-            aria-label="−"
+            aria-label={t("home.fewerGuests")}
             onClick={() =>
               setParty((p) => Math.max(restaurant.minParty, p - 1))
             }
@@ -282,16 +284,16 @@ function WidgetBody({ restaurant, initial }: Props) {
             <Minus />
           </Button>
           <span
-            className="min-w-20 text-center font-semibold"
+            className="min-w-24 text-center font-display text-base font-extrabold"
             aria-live="polite"
           >
             {t("common.guests", { count: party })}
           </span>
           <Button
             type="button"
-            variant="outline"
+            variant="ghost"
             size="icon"
-            aria-label="+"
+            aria-label={t("home.moreGuests")}
             onClick={() =>
               setParty((p) => Math.min(restaurant.maxParty + 1, p + 1))
             }
@@ -311,10 +313,10 @@ function WidgetBody({ restaurant, initial }: Props) {
         <>
           {/* Date chips — a radio group bounded by the booking horizon */}
           <div role="radiogroup" aria-label={t("restaurant.chooseDate")}>
-            <span className="text-sm font-medium">
+            <span className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
               {t("restaurant.chooseDate")}
             </span>
-            <div className="mt-1.5 flex gap-2 overflow-x-auto pb-1">
+            <div className="scroll-x mt-2 flex gap-2 pb-1">
               {days.map((d, i) => (
                 <button
                   key={d}
@@ -323,13 +325,18 @@ function WidgetBody({ restaurant, initial }: Props) {
                   aria-checked={date === d}
                   onClick={() => setDate(d)}
                   className={cn(
-                    "shrink-0 rounded-lg border px-3 py-2 text-sm whitespace-nowrap transition-colors",
+                    "flex min-w-16 shrink-0 flex-col items-center gap-0.5 rounded-2xl border px-3 py-2.5 transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-coral/35",
                     date === d
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border bg-card hover:border-primary/50",
+                      ? "animate-pop-in border-transparent bg-gradient-brand text-white shadow-soft"
+                      : "border-border bg-card hover:border-coral/45",
                   )}
                 >
-                  {dayLabel(d, i)}
+                  <span className="text-xs font-semibold whitespace-nowrap">
+                    {dayLabel(d, i)}
+                  </span>
+                  <span className="font-display text-lg leading-none font-extrabold tabular-nums">
+                    {d.slice(8, 10)}
+                  </span>
                 </button>
               ))}
             </div>
@@ -337,7 +344,7 @@ function WidgetBody({ restaurant, initial }: Props) {
 
           {/* Slots */}
           <div aria-live="polite">
-            <span className="text-sm font-medium">
+            <span className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
               {t("restaurant.chooseTime")}
             </span>
             {loading ? (
@@ -396,7 +403,7 @@ function WidgetBody({ restaurant, initial }: Props) {
                         {group.name}
                       </p>
                     ) : null}
-                    <div className="grid grid-cols-4 gap-1.5 sm:grid-cols-5">
+                    <div className="grid grid-cols-4 gap-2 sm:grid-cols-5">
                       {group.slots.map((s) => {
                         const hhmm = s.slot_local.slice(0, 5);
                         const reasonKey = s.reason
@@ -424,12 +431,12 @@ function WidgetBody({ restaurant, initial }: Props) {
                               );
                             }}
                             className={cn(
-                              "rounded-md border px-1 py-2 text-sm font-medium transition-all",
+                              "rounded-full border px-1 py-2.5 text-sm font-bold tabular-nums transition-all outline-none focus-visible:ring-[3px] focus-visible:ring-coral/35",
                               effectiveSelected === hhmm
-                                ? "scale-[1.04] border-primary bg-primary text-primary-foreground"
+                                ? "animate-pop-in border-transparent bg-gradient-brand text-white shadow-soft"
                                 : s.available
-                                  ? "border-olive/40 bg-olive/10 text-foreground hover:border-olive"
-                                  : "cursor-not-allowed border-border text-muted-foreground/50 line-through",
+                                  ? "border-mint/35 bg-mint-soft text-mint hover:border-mint hover:bg-mint hover:text-mint-foreground"
+                                  : "cursor-not-allowed border-border bg-muted/60 text-muted-foreground/60 line-through",
                             )}
                           >
                             {hhmm}
@@ -446,15 +453,18 @@ function WidgetBody({ restaurant, initial }: Props) {
           {/* Booking error — outside the form so it survives the form
               unmounting when a raced-away slot clears the selection. */}
           {errorCode ? (
-            <p role="alert" className="text-sm font-medium text-destructive">
+            <p
+              role="alert"
+              className="rounded-2xl border border-destructive/25 bg-destructive/8 px-4 py-3 text-sm font-medium text-destructive"
+            >
               {t(`booking.errors.${errorCode}`)}
             </p>
           ) : null}
 
           {/* Details form */}
           {effectiveSelected ? (
-            <form onSubmit={submit} className="space-y-3" ref={detailsRef}>
-              <p className="rounded-lg bg-secondary px-3 py-2 text-sm">
+            <form onSubmit={submit} className="space-y-3.5" ref={detailsRef}>
+              <p className="rounded-2xl border border-coral/20 bg-coral-soft px-4 py-3 text-sm font-medium text-coral dark:bg-coral/10">
                 {t("booking.summaryLine", {
                   restaurant: restaurant.name,
                   date: shortDay(`${date}T12:00:00Z`, restaurant.timezone, locale),
@@ -506,6 +516,8 @@ function WidgetBody({ restaurant, initial }: Props) {
               <Turnstile onToken={setTurnstileToken} />
               <Button
                 type="submit"
+                variant="brand"
+                size="lg"
                 className="w-full"
                 disabled={
                   submitting || (!!TURNSTILE_SITE_KEY && !turnstileToken)
@@ -598,8 +610,11 @@ function WidgetChrome({ restaurant, initial }: Props) {
 
   if (restaurant.bookingMode !== "instant") {
     return (
-      <div className="rounded-xl border border-border bg-card p-5">
-        <h2 className="font-heading text-xl font-semibold">
+      <div
+        id="book"
+        className="rounded-3xl border border-border bg-card p-5 shadow-soft sm:p-6"
+      >
+        <h2 className="font-display text-xl font-bold">
           {t("restaurant.bookingWidgetTitle")}
         </h2>
         <div className="mt-3">
@@ -616,29 +631,32 @@ function WidgetChrome({ restaurant, initial }: Props) {
   return (
     <>
       {/* Desktop card */}
-      <div className="hidden rounded-xl border border-border bg-card p-5 shadow-sm lg:block">
-        <h2 className="font-heading text-xl font-semibold">
+      <div
+        id="book"
+        className="hidden rounded-3xl border border-border bg-card p-6 shadow-float lg:block"
+      >
+        <h2 className="font-display text-xl font-bold">
           {t("restaurant.bookingWidgetTitle")}
         </h2>
-        <div className="mt-4">
+        <div className="mt-5">
           <WidgetBody restaurant={restaurant} initial={initial} />
         </div>
       </div>
 
       {/* Mobile sticky bar + sheet */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 p-3 backdrop-blur lg:hidden">
+      <div className="glass fixed inset-x-0 bottom-0 z-40 border-t border-border p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-float lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
-            <Button size="lg" className="w-full">
+            <Button variant="brand" size="lg" className="w-full">
               {t("common.bookATable")}
             </Button>
           </SheetTrigger>
           <SheetContent
             side="bottom"
-            className="max-h-[92dvh] overflow-y-auto rounded-t-2xl p-5"
+            className="max-h-[92dvh] overflow-y-auto rounded-t-3xl p-5"
           >
-            <SheetHeader className="p-0 pb-3">
-              <SheetTitle className="font-heading text-xl">
+            <SheetHeader className="p-0 pb-4">
+              <SheetTitle className="font-display text-xl font-bold">
                 {t("restaurant.bookingWidgetTitle")}
               </SheetTitle>
             </SheetHeader>
