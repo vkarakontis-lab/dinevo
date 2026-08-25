@@ -1,0 +1,25 @@
+{
+  "_readme": "Filterable amenities/vibes. `icon` is a lucide-react icon name. Keep this list short and tourist-relevant; every entry becomes a filter chip.",
+  "features": [
+    { "slug": "sea-view", "name": { "en": "Sea view", "el": "Θέα θάλασσα" }, "icon": "waves" },
+    { "slug": "beachfront", "name": { "en": "Beachfront", "el": "Στην παραλία" }, "icon": "umbrella" },
+    { "slug": "sunset-view", "name": { "en": "Sunset view", "el": "Θέα ηλιοβασίλεμα" }, "icon": "sunset" },
+    { "slug": "outdoor-seating", "name": { "en": "Outdoor seating", "el": "Εξωτερικός χώρος" }, "icon": "sun" },
+    { "slug": "rooftop", "name": { "en": "Rooftop", "el": "Ταράτσα" }, "icon": "building" },
+    { "slug": "traditional-village", "name": { "en": "Village setting", "el": "Παραδοσιακό χωριό" }, "icon": "mountain" },
+    { "slug": "romantic", "name": { "en": "Romantic", "el": "Ρομαντικό" }, "icon": "heart" },
+    { "slug": "kid-friendly", "name": { "en": "Kid-friendly", "el": "Φιλικό για παιδιά" }, "icon": "baby" },
+    { "slug": "groups", "name": { "en": "Good for groups", "el": "Κατάλληλο για γκρουπ" }, "icon": "users" },
+    { "slug": "private-dining", "name": { "en": "Private dining", "el": "Ιδιωτικός χώρος" }, "icon": "door-closed" },
+    { "slug": "live-music", "name": { "en": "Live music", "el": "Ζωντανή μουσική" }, "icon": "music" },
+    { "slug": "cocktail-bar", "name": { "en": "Cocktail bar", "el": "Cocktail bar" }, "icon": "martini" },
+    { "slug": "late-night", "name": { "en": "Open late", "el": "Ανοιχτά αργά" }, "icon": "moon" },
+    { "slug": "vegan-options", "name": { "en": "Vegan options", "el": "Vegan επιλογές" }, "icon": "leaf" },
+    { "slug": "gluten-free-options", "name": { "en": "Gluten-free options", "el": "Επιλογές χωρίς γλουτένη" }, "icon": "wheat-off" },
+    { "slug": "wheelchair-accessible", "name": { "en": "Wheelchair accessible", "el": "Πρόσβαση ΑμεΑ" }, "icon": "accessibility" },
+    { "slug": "pet-friendly", "name": { "en": "Pet-friendly", "el": "Φιλικό για κατοικίδια" }, "icon": "paw-print" },
+    { "slug": "parking", "name": { "en": "Parking", "el": "Πάρκινγκ" }, "icon": "car" },
+    { "slug": "air-conditioning", "name": { "en": "Air conditioning", "el": "Κλιματισμός" }, "icon": "snowflake" },
+    { "slug": "card-payment", "name": { "en": "Cards accepted", "el": "Δέχεται κάρτες" }, "icon": "credit-card" }
+  ]
+}

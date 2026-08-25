@@ -1,0 +1,10 @@
+Hero photo: Fig Tree beach, Protaras — dronepicr, CC BY 2.0, via Wikimedia Commons
+https://commons.wikimedia.org/wiki/File:Fig_Tree_beach_Protaras_(29851923968).jpg
+
+Cuisine card photos are the same CC-licensed Wikimedia images as public/demo (see public/demo/CREDITS.txt).
+
+Cuisine card replacements (2026-08-25):
+public/images/cuisines/seafood.webp — Χταποδάκι στα κάρβουνα (4462751743).jpg — Klearchos Kapoutsis from Santorini, Greece — CC BY 2.0 — via Wikimedia Commons
+public/images/cuisines/taverna.webp — Grilled haloumi cheese in Cyprus.JPG — Anatoliy Smaga — CC BY-SA 4.0 — via Wikimedia Commons
+public/images/cuisines/grill-souvlaki.webp — Greek chicken souvlaki merida.jpg — Leeturtle — CC BY-SA 4.0 — via Wikimedia Commons
+public/images/cuisines/greek.webp — Moussaka and Greek Salad at a taverna in Greece.jpg — Vouliagmeni — CC BY-SA 4.0 — via Wikimedia Commons

@@ -1,0 +1,369 @@
+{
+  "_readme": "Single source of truth for launch geography. The app reads this for navigation/SEO pages and scripts/seed-config.mjs upserts it into Supabase. Add a country by adding an entry here — see references/countries.md. Names are {locale: label}; every locale in `locales` must be present.",
+  "countries": [
+    {
+      "code": "CY",
+      "slug": "cyprus",
+      "name": {
+        "en": "Cyprus",
+        "el": "Κύπρος"
+      },
+      "currency": "EUR",
+      "timezone": "Asia/Nicosia",
+      "phone_code": "+357",
+      "locales": [
+        "en",
+        "el"
+      ],
+      "default_locale": "en",
+      "bbox": {
+        "minLat": 34.55,
+        "maxLat": 35.75,
+        "minLng": 32.2,
+        "maxLng": 34.65
+      },
+      "is_active": true,
+      "regions": [
+        {
+          "slug": "nicosia",
+          "name": {
+            "en": "Nicosia",
+            "el": "Λευκωσία"
+          },
+          "lat": 35.1856,
+          "lng": 33.3823,
+          "areas": [
+            {
+              "slug": "nicosia-old-town",
+              "name": {
+                "en": "Old Town",
+                "el": "Παλιά Πόλη"
+              },
+              "lat": 35.1735,
+              "lng": 33.363
+            },
+            {
+              "slug": "engomi",
+              "name": {
+                "en": "Engomi",
+                "el": "Έγκωμη"
+              },
+              "lat": 35.158,
+              "lng": 33.326
+            },
+            {
+              "slug": "strovolos",
+              "name": {
+                "en": "Strovolos",
+                "el": "Στρόβολος"
+              },
+              "lat": 35.133,
+              "lng": 33.345
+            },
+            {
+              "slug": "aglantzia",
+              "name": {
+                "en": "Aglantzia",
+                "el": "Αγλαντζιά"
+              },
+              "lat": 35.151,
+              "lng": 33.391
+            },
+            {
+              "slug": "lakatamia",
+              "name": {
+                "en": "Lakatamia",
+                "el": "Λακατάμια"
+              },
+              "lat": 35.105,
+              "lng": 33.312
+            },
+            {
+              "slug": "latsia",
+              "name": {
+                "en": "Latsia",
+                "el": "Λατσιά"
+              },
+              "lat": 35.103,
+              "lng": 33.376
+            },
+            {
+              "slug": "kakopetria",
+              "name": {
+                "en": "Kakopetria",
+                "el": "Κακοπετριά"
+              },
+              "lat": 34.986,
+              "lng": 32.904
+            }
+          ]
+        },
+        {
+          "slug": "limassol",
+          "name": {
+            "en": "Limassol",
+            "el": "Λεμεσός"
+          },
+          "lat": 34.7071,
+          "lng": 33.0226,
+          "areas": [
+            {
+              "slug": "limassol-old-town",
+              "name": {
+                "en": "Old Town",
+                "el": "Παλιά Πόλη"
+              },
+              "lat": 34.672,
+              "lng": 33.044
+            },
+            {
+              "slug": "limassol-marina",
+              "name": {
+                "en": "Marina",
+                "el": "Μαρίνα"
+              },
+              "lat": 34.67,
+              "lng": 33.039
+            },
+            {
+              "slug": "molos",
+              "name": {
+                "en": "Molos Seafront",
+                "el": "Μόλος"
+              },
+              "lat": 34.677,
+              "lng": 33.05
+            },
+            {
+              "slug": "germasogeia",
+              "name": {
+                "en": "Germasogeia (Tourist Area)",
+                "el": "Γερμασόγεια (Τουριστική Περιοχή)"
+              },
+              "lat": 34.706,
+              "lng": 33.087
+            },
+            {
+              "slug": "agios-tychonas",
+              "name": {
+                "en": "Agios Tychonas",
+                "el": "Άγιος Τύχωνας"
+              },
+              "lat": 34.714,
+              "lng": 33.132
+            },
+            {
+              "slug": "pissouri",
+              "name": {
+                "en": "Pissouri",
+                "el": "Πισσούρι"
+              },
+              "lat": 34.67,
+              "lng": 32.702
+            },
+            {
+              "slug": "platres",
+              "name": {
+                "en": "Platres (Troodos)",
+                "el": "Πλάτρες (Τρόοδος)"
+              },
+              "lat": 34.89,
+              "lng": 32.864
+            },
+            {
+              "slug": "omodos",
+              "name": {
+                "en": "Omodos",
+                "el": "Όμοδος"
+              },
+              "lat": 34.848,
+              "lng": 32.808
+            }
+          ]
+        },
+        {
+          "slug": "larnaca",
+          "name": {
+            "en": "Larnaca",
+            "el": "Λάρνακα"
+          },
+          "lat": 34.9167,
+          "lng": 33.6233,
+          "areas": [
+            {
+              "slug": "finikoudes",
+              "name": {
+                "en": "Finikoudes",
+                "el": "Φοινικούδες"
+              },
+              "lat": 34.915,
+              "lng": 33.638
+            },
+            {
+              "slug": "mackenzie",
+              "name": {
+                "en": "Mackenzie",
+                "el": "Μακένζι"
+              },
+              "lat": 34.885,
+              "lng": 33.627
+            },
+            {
+              "slug": "oroklini",
+              "name": {
+                "en": "Oroklini",
+                "el": "Ορόκλινη"
+              },
+              "lat": 34.988,
+              "lng": 33.657
+            },
+            {
+              "slug": "pervolia",
+              "name": {
+                "en": "Pervolia",
+                "el": "Περβόλια"
+              },
+              "lat": 34.836,
+              "lng": 33.573
+            },
+            {
+              "slug": "lefkara",
+              "name": {
+                "en": "Lefkara",
+                "el": "Λεύκαρα"
+              },
+              "lat": 34.866,
+              "lng": 33.304
+            }
+          ]
+        },
+        {
+          "slug": "paphos",
+          "name": {
+            "en": "Paphos",
+            "el": "Πάφος"
+          },
+          "lat": 34.7754,
+          "lng": 32.4245,
+          "areas": [
+            {
+              "slug": "kato-paphos",
+              "name": {
+                "en": "Kato Paphos",
+                "el": "Κάτω Πάφος"
+              },
+              "lat": 34.755,
+              "lng": 32.413
+            },
+            {
+              "slug": "paphos-old-town",
+              "name": {
+                "en": "Old Town (Ktima)",
+                "el": "Παλιά Πόλη (Κτήμα)"
+              },
+              "lat": 34.776,
+              "lng": 32.423
+            },
+            {
+              "slug": "coral-bay",
+              "name": {
+                "en": "Coral Bay",
+                "el": "Κόραλ Μπέι"
+              },
+              "lat": 34.853,
+              "lng": 32.374
+            },
+            {
+              "slug": "peyia",
+              "name": {
+                "en": "Peyia",
+                "el": "Πέγεια"
+              },
+              "lat": 34.879,
+              "lng": 32.38
+            },
+            {
+              "slug": "polis-latchi",
+              "name": {
+                "en": "Polis & Latchi",
+                "el": "Πόλις & Λατσί"
+              },
+              "lat": 35.036,
+              "lng": 32.426
+            },
+            {
+              "slug": "geroskipou",
+              "name": {
+                "en": "Geroskipou",
+                "el": "Γεροσκήπου"
+              },
+              "lat": 34.759,
+              "lng": 32.454
+            }
+          ]
+        },
+        {
+          "slug": "famagusta",
+          "name": {
+            "en": "Ayia Napa & Protaras",
+            "el": "Αγία Νάπα & Πρωταράς"
+          },
+          "lat": 35.038,
+          "lng": 33.983,
+          "areas": [
+            {
+              "slug": "ayia-napa",
+              "name": {
+                "en": "Ayia Napa",
+                "el": "Αγία Νάπα"
+              },
+              "lat": 34.988,
+              "lng": 34
+            },
+            {
+              "slug": "protaras",
+              "name": {
+                "en": "Protaras",
+                "el": "Πρωταράς"
+              },
+              "lat": 35.012,
+              "lng": 34.057
+            },
+            {
+              "slug": "pernera",
+              "name": {
+                "en": "Pernera",
+                "el": "Περνέρα"
+              },
+              "lat": 35.03,
+              "lng": 34.053
+            },
+            {
+              "slug": "kapparis",
+              "name": {
+                "en": "Kapparis",
+                "el": "Κάππαρης"
+              },
+              "lat": 35.048,
+              "lng": 34.018
+            },
+            {
+              "slug": "paralimni",
+              "name": {
+                "en": "Paralimni",
+                "el": "Παραλίμνι"
+              },
+              "lat": 35.038,
+              "lng": 33.983
+            }
+          ]
+        }
+      ],
+      "name_locative": {
+        "en": "Cyprus",
+        "el": "Κύπρο"
+      },
+      "staff_locale": "el"
+    }
+  ]
+}

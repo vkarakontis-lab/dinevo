@@ -1,0 +1,76 @@
+{
+  "_help": "Fully filled example (fictional restaurant) — copy the shape, not the content.",
+  "slug": "thalassa-fish-taverna-protaras",
+  "country": "CY",
+  "region": "famagusta",
+  "area": "protaras",
+  "status": "published",
+  "booking_mode": "instant",
+  "price_band": 2,
+  "translations": {
+    "en": {
+      "name": "Thalassa Fish Taverna",
+      "tagline": "Family-run fish taverna on the water at Protaras harbour",
+      "description": "Thalassa has been run by the same family since 1987, and the boat that brings in the morning catch is still moored twenty metres from the terrace. Expect grilled sea bream, calamari fried to order, octopus dried on the line out front, and a fish meze that keeps arriving until you ask it to stop. Tables on the jetty go first at sunset, so book early in summer. The kitchen is happy with children, and there is a short but sensible list of Cypriot whites from the Paphos hills. Cash and cards accepted; free parking behind the harbour.",
+      "is_machine_translated": false
+    },
+    "el": {
+      "name": "Ψαροταβέρνα Θάλασσα",
+      "tagline": "Οικογενειακή ψαροταβέρνα δίπλα στο νερό, στο λιμανάκι του Πρωταρά",
+      "description": "Η Θάλασσα λειτουργεί από την ίδια οικογένεια από το 1987 και η βάρκα που φέρνει την πρωινή ψαριά είναι ακόμη δεμένη είκοσι μέτρα από τη βεράντα. Περιμένετε τσιπούρα στα κάρβουνα, καλαμάρι τηγανητό της ώρας, χταπόδι που στεγνώνει στο σκοινί απέξω και ψαρομεζέ που συνεχίζει να έρχεται μέχρι να πείτε «φτάνει». Τα τραπέζια στην προβλήτα φεύγουν πρώτα την ώρα του ηλιοβασιλέματος, οπότε κλείστε νωρίς το καλοκαίρι. Η κουζίνα είναι φιλική για παιδιά και υπάρχει μικρή αλλά καλή λίστα κυπριακών λευκών κρασιών από την ορεινή Πάφο. Δέχεται μετρητά και κάρτες· δωρεάν πάρκινγκ πίσω από το λιμάνι.",
+      "is_machine_translated": true
+    }
+  },
+  "cuisines": ["seafood", "cypriot-meze"],
+  "features": ["sea-view", "sunset-view", "outdoor-seating", "kid-friendly", "parking", "card-payment"],
+  "contact": {
+    "phone": "+35723000000",
+    "whatsapp": "+35799000000",
+    "email": "hello@thalassa-protaras.example",
+    "website": "https://thalassa-protaras.example",
+    "instagram": "thalassa.protaras",
+    "menu_url": "https://thalassa-protaras.example/menu.pdf",
+    "google_maps_url": null
+  },
+  "location": {
+    "address_line": "Protaras Harbour, Protaras Ave 12",
+    "postcode": "5296",
+    "lat": 35.0091,
+    "lng": 34.0604
+  },
+  "opening_hours": [
+    { "weekdays": [1, 2, 3, 4, 5, 6, 7], "opens": "12:00", "closes": "23:30" }
+  ],
+  "service_periods": [
+    { "name": { "en": "Lunch", "el": "Μεσημεριανό" }, "weekdays": [1, 2, 3, 4, 5, 6, 7], "first_seating": "12:00", "last_seating": "15:00" },
+    { "name": { "en": "Dinner", "el": "Δείπνο" }, "weekdays": [1, 2, 3, 4, 5, 6, 7], "first_seating": "18:00", "last_seating": "21:30", "turn_minutes": 120, "max_covers_per_slot": 24 }
+  ],
+  "booking_rules": {
+    "min_party": 1,
+    "max_party": 10,
+    "lead_time_minutes": 60,
+    "max_advance_days": 90,
+    "turn_minutes": 90,
+    "slot_interval_minutes": 30
+  },
+  "tables": [
+    { "label": "J1", "min_party": 2, "max_party": 4 },
+    { "label": "J2", "min_party": 2, "max_party": 4 },
+    { "label": "J3", "min_party": 4, "max_party": 6 },
+    { "label": "T1", "min_party": 1, "max_party": 2 },
+    { "label": "T2", "min_party": 1, "max_party": 2 },
+    { "label": "T3", "min_party": 2, "max_party": 4 },
+    { "label": "T4", "min_party": 2, "max_party": 4 },
+    { "label": "T5", "min_party": 4, "max_party": 6 },
+    { "label": "T6", "min_party": 6, "max_party": 10 }
+  ],
+  "tables_are_placeholder": false,
+  "capacity_covers": 46,
+  "photos": [
+    { "file": "01-jetty-sunset.jpg", "alt": { "en": "Tables on the jetty at sunset", "el": "Τραπέζια στην προβλήτα το ηλιοβασίλεμα" }, "is_cover": true },
+    { "file": "02-fish-meze.jpg", "alt": { "en": "Fish meze spread", "el": "Ψαρομεζές" } },
+    { "file": "03-grilled-bream.jpg", "alt": { "en": "Grilled sea bream", "el": "Τσιπούρα στα κάρβουνα" } }
+  ],
+  "is_featured": false,
+  "owner_notes": "Owner Andreas — WhatsApp him for menu/photo updates. Wants pacing max 24 covers per dinner slot."
+}

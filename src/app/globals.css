@@ -1,0 +1,466 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ==========================================================================
+   Dinevo design system — "Mediterranean Pop"
+   Hyper-modern: high-chroma brand hues, gradient signatures, glass surfaces,
+   colored glows, generous radii. Colour is a system, not decoration:
+     coral   = the brand + every primary action
+     grape   = the second half of the brand gradient
+     sea     = wayfinding (areas, map, location)
+     mint    = availability / open / confirmed
+     sun     = featured / rating / highlight
+     pink    = energy accent (chips, offers)
+   ========================================================================== */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-heading: var(--font-display);
+  --font-mono: var(--font-geist-mono);
+
+  /* shadcn surface tokens */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand hues — each with a foreground and a soft tint for fills */
+  --color-coral: var(--coral);
+  --color-coral-foreground: var(--coral-foreground);
+  --color-coral-soft: var(--coral-soft);
+  --color-grape: var(--grape);
+  --color-grape-foreground: var(--grape-foreground);
+  --color-grape-soft: var(--grape-soft);
+  --color-sea: var(--sea);
+  --color-sea-foreground: var(--sea-foreground);
+  --color-sea-soft: var(--sea-soft);
+  --color-mint: var(--mint);
+  --color-mint-foreground: var(--mint-foreground);
+  --color-mint-soft: var(--mint-soft);
+  --color-sun: var(--sun);
+  --color-sun-foreground: var(--sun-foreground);
+  --color-sun-soft: var(--sun-soft);
+  --color-pink: var(--pink);
+  --color-pink-foreground: var(--pink-foreground);
+  --color-pink-soft: var(--pink-soft);
+
+  /* Legacy aliases so any not-yet-restyled view keeps compiling */
+  --color-terracotta: var(--coral);
+  --color-terracotta-foreground: var(--coral-foreground);
+  --color-olive: var(--mint);
+  --color-olive-foreground: var(--mint-foreground);
+  --color-sand: var(--border);
+
+  --color-chart-1: var(--coral);
+  --color-chart-2: var(--grape);
+  --color-chart-3: var(--sea);
+  --color-chart-4: var(--mint);
+  --color-chart-5: var(--sun);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Generous, modern radii — cards are 2xl/3xl, controls are full pills */
+  --radius-sm: calc(var(--radius) * 0.45);
+  --radius-md: calc(var(--radius) * 0.65);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.35);
+  --radius-2xl: calc(var(--radius) * 1.75);
+  --radius-3xl: calc(var(--radius) * 2.4);
+  --radius-4xl: calc(var(--radius) * 3.2);
+
+  /* Soft, coloured elevation instead of grey box-shadows */
+  --shadow-soft: 0 1px 2px rgb(11 13 18 / 0.04), 0 8px 24px -12px rgb(11 13 18 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(11 13 18 / 0.05), 0 18px 40px -18px rgb(11 13 18 / 0.22);
+  --shadow-float: 0 4px 8px rgb(11 13 18 / 0.06), 0 32px 64px -28px rgb(11 13 18 / 0.32);
+
+  --animate-float-slow: float-slow 14s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.4s linear infinite;
+  --animate-pop-in: pop-in 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-rise-in: rise-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces — near-white with a whisper of warmth, so colour does the talking */
+  --background: #fffcfa;
+  --foreground: #0b0d12;
+  --card: #ffffff;
+  --card-foreground: #0b0d12;
+  --popover: #ffffff;
+  --popover-foreground: #0b0d12;
+
+  --primary: #ff5636;
+  --primary-foreground: #fffaf8;
+  --secondary: #f4f2f7;
+  --secondary-foreground: #16181f;
+  --muted: #f5f3f6;
+  --muted-foreground: #6a6672;
+  --accent: #fff0ec;
+  --accent-foreground: #d33a1c;
+  --destructive: #e0342c;
+  --border: #ebe7ef;
+  --input: #ded9e4;
+  --ring: #ff5636;
+
+  /* Brand hues */
+  --coral: #ff5636;
+  --coral-foreground: #fffaf8;
+  --coral-soft: #ffece7;
+  --grape: #7c4dff;
+  --grape-foreground: #fbfaff;
+  --grape-soft: #efe9ff;
+  --sea: #00a9c9;
+  --sea-foreground: #f7fdff;
+  --sea-soft: #e0f7fc;
+  --mint: #00b473;
+  --mint-foreground: #f6fffb;
+  --mint-soft: #dcf9ec;
+  --sun: #ffab00;
+  --sun-foreground: #241700;
+  --sun-soft: #fff3d6;
+  --pink: #ff2d84;
+  --pink-foreground: #fff7fa;
+  --pink-soft: #ffe6f0;
+
+  /* Gradient signatures */
+  --gradient-brand: linear-gradient(115deg, #ff5636 0%, #ff2d84 48%, #7c4dff 100%);
+  --gradient-sea: linear-gradient(115deg, #00a9c9 0%, #00b473 100%);
+  --gradient-sun: linear-gradient(115deg, #ffab00 0%, #ff5636 100%);
+  --gradient-dusk: linear-gradient(160deg, #7c4dff 0%, #ff2d84 55%, #ff5636 100%);
+
+  --radius: 0.875rem;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0b0d12;
+  --sidebar-primary: #ff5636;
+  --sidebar-primary-foreground: #fffaf8;
+  --sidebar-accent: #f6f4f9;
+  --sidebar-accent-foreground: #0b0d12;
+  --sidebar-border: #ebe7ef;
+  --sidebar-ring: #ff5636;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --background: #0a0b11;
+  --foreground: #f4f2f7;
+  --card: #14161f;
+  --card-foreground: #f4f2f7;
+  --popover: #171a24;
+  --popover-foreground: #f4f2f7;
+
+  --primary: #ff6b4f;
+  --primary-foreground: #1a0703;
+  --secondary: #1d202b;
+  --secondary-foreground: #f4f2f7;
+  --muted: #1a1d27;
+  --muted-foreground: #a29eae;
+  --accent: #2a1a17;
+  --accent-foreground: #ff9c86;
+  --destructive: #ff5f56;
+  --border: #262a37;
+  --input: #2f3444;
+  --ring: #ff6b4f;
+
+  --coral: #ff6b4f;
+  --coral-foreground: #1a0703;
+  --coral-soft: #35171045;
+  --grape: #9b78ff;
+  --grape-foreground: #100726;
+  --grape-soft: #241a4545;
+  --sea: #29c6e2;
+  --sea-foreground: #04191f;
+  --sea-soft: #0e2c3545;
+  --mint: #2ad498;
+  --mint-foreground: #032015;
+  --mint-soft: #0d2e2245;
+  --sun: #ffc043;
+  --sun-foreground: #241700;
+  --sun-soft: #33260a45;
+  --pink: #ff5c9f;
+  --pink-foreground: #260311;
+  --pink-soft: #33101f45;
+
+  --gradient-brand: linear-gradient(115deg, #ff6b4f 0%, #ff5c9f 48%, #9b78ff 100%);
+  --gradient-sea: linear-gradient(115deg, #29c6e2 0%, #2ad498 100%);
+  --gradient-sun: linear-gradient(115deg, #ffc043 0%, #ff6b4f 100%);
+  --gradient-dusk: linear-gradient(160deg, #9b78ff 0%, #ff5c9f 55%, #ff6b4f 100%);
+
+  --sidebar: #14161f;
+  --sidebar-foreground: #f4f2f7;
+  --sidebar-primary: #ff6b4f;
+  --sidebar-primary-foreground: #1a0703;
+  --sidebar-accent: #1d202b;
+  --sidebar-accent-foreground: #f4f2f7;
+  --sidebar-border: #262a37;
+  --sidebar-ring: #ff6b4f;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/60;
+  }
+  html {
+    @apply font-sans;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-size: 1.0625rem; /* 17px — generous on mobile */
+    text-rendering: optimizeLegibility;
+  }
+  /* Display face: tight, confident, modern. Greek subset ships with it. */
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display,
+  .font-heading {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+    font-weight: 800;
+  }
+  h1 {
+    letter-spacing: -0.038em;
+  }
+  ::selection {
+    background: var(--coral);
+    color: var(--coral-foreground);
+  }
+}
+
+@layer utilities {
+  /* ---- Gradient signatures ------------------------------------------- */
+  .bg-gradient-brand {
+    background-image: var(--gradient-brand);
+  }
+  .bg-gradient-sea {
+    background-image: var(--gradient-sea);
+  }
+  .bg-gradient-sun {
+    background-image: var(--gradient-sun);
+  }
+  .bg-gradient-dusk {
+    background-image: var(--gradient-dusk);
+  }
+  .text-gradient-brand {
+    background-image: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* Descenders get clipped without a hair of padding on tight display type */
+    padding-bottom: 0.06em;
+  }
+  .text-gradient-sea {
+    background-image: var(--gradient-sea);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding-bottom: 0.06em;
+  }
+
+  /* ---- Glass surfaces -------------------------------------------------- */
+  .glass {
+    background-color: color-mix(in oklab, var(--card) 72%, transparent);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+  .glass-dark {
+    background-color: rgb(11 13 18 / 0.42);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+  }
+
+  /* ---- Coloured glows -------------------------------------------------- */
+  .glow-brand {
+    box-shadow:
+      0 10px 30px -12px color-mix(in oklab, var(--coral) 60%, transparent),
+      0 2px 8px -4px color-mix(in oklab, var(--grape) 40%, transparent);
+  }
+  .glow-sea {
+    box-shadow: 0 10px 30px -12px color-mix(in oklab, var(--sea) 55%, transparent);
+  }
+  .glow-mint {
+    box-shadow: 0 8px 24px -12px color-mix(in oklab, var(--mint) 60%, transparent);
+  }
+
+  /* ---- Aurora mesh: the hyper-modern backdrop -------------------------- */
+  .mesh-aurora {
+    position: relative;
+    isolation: isolate;
+  }
+  .mesh-aurora::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    z-index: -1;
+    background:
+      radial-gradient(38% 44% at 12% 18%, color-mix(in oklab, var(--coral) 42%, transparent) 0%, transparent 68%),
+      radial-gradient(34% 40% at 88% 12%, color-mix(in oklab, var(--grape) 40%, transparent) 0%, transparent 66%),
+      radial-gradient(42% 46% at 72% 88%, color-mix(in oklab, var(--sea) 38%, transparent) 0%, transparent 68%),
+      radial-gradient(30% 34% at 34% 92%, color-mix(in oklab, var(--sun) 34%, transparent) 0%, transparent 64%);
+    filter: blur(28px);
+    animation: float-slow 18s ease-in-out infinite;
+  }
+
+  /* Fine dotted grid — reads as "product", not "brochure" */
+  .bg-dotgrid {
+    background-image: radial-gradient(
+      color-mix(in oklab, var(--foreground) 12%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  /* ---- Interaction ----------------------------------------------------- */
+  .lift {
+    transition:
+      transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.28s ease;
+  }
+  .lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  /* Hairline gradient ring for premium cards (border-image can't do radius) */
+  .ring-gradient {
+    position: relative;
+  }
+  .ring-gradient::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--gradient-brand);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.28s ease;
+  }
+  .ring-gradient:hover::after {
+    opacity: 1;
+  }
+
+  /* Horizontal scrollers without visible scrollbars */
+  .scroll-x {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+  }
+  .scroll-x::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Section rhythm — one class so every page breathes the same */
+  .section {
+    padding-block: clamp(2.75rem, 6vw, 4.5rem);
+  }
+
+  .stagger > * {
+    animation: rise-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .stagger > *:nth-child(1) { animation-delay: 0.02s; }
+  .stagger > *:nth-child(2) { animation-delay: 0.06s; }
+  .stagger > *:nth-child(3) { animation-delay: 0.1s; }
+  .stagger > *:nth-child(4) { animation-delay: 0.14s; }
+  .stagger > *:nth-child(5) { animation-delay: 0.18s; }
+  .stagger > *:nth-child(6) { animation-delay: 0.22s; }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -3%, 0) scale(1.06);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -160% 0;
+  }
+  100% {
+    background-position: 260% 0;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Respect the OS setting — every animation above is decorative. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .lift:hover {
+    transform: none;
+  }
+}
+
+/* Print stylesheet for the dashboard "Today" list */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

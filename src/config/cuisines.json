@@ -1,0 +1,197 @@
+{
+  "_readme": "Canonical cuisine taxonomy. Restaurants reference these slugs; the first cuisine listed for a restaurant is its primary one (card badge + SEO pages). Add new slugs here and re-run scripts/seed-config.mjs.",
+  "cuisines": [
+    {
+      "slug": "cypriot-meze",
+      "name": {
+        "en": "Cypriot & Meze",
+        "el": "Κυπριακή & Μεζέ"
+      },
+      "emoji": "🫒"
+    },
+    {
+      "slug": "taverna",
+      "name": {
+        "en": "Taverna",
+        "el": "Ταβέρνα"
+      },
+      "emoji": "🥘"
+    },
+    {
+      "slug": "greek",
+      "name": {
+        "en": "Greek",
+        "el": "Ελληνική"
+      },
+      "emoji": "🇬🇷"
+    },
+    {
+      "slug": "seafood",
+      "name": {
+        "en": "Seafood & Fish Taverna",
+        "el": "Θαλασσινά & Ψαροταβέρνα"
+      },
+      "emoji": "🐙"
+    },
+    {
+      "slug": "grill-souvlaki",
+      "name": {
+        "en": "Grill & Souvlaki",
+        "el": "Ψησταριά & Σουβλάκι"
+      },
+      "emoji": "🍢"
+    },
+    {
+      "slug": "mediterranean",
+      "name": {
+        "en": "Mediterranean",
+        "el": "Μεσογειακή"
+      },
+      "emoji": "🍅"
+    },
+    {
+      "slug": "fine-dining",
+      "name": {
+        "en": "Fine Dining",
+        "el": "Fine Dining"
+      },
+      "emoji": "🍽️"
+    },
+    {
+      "slug": "italian",
+      "name": {
+        "en": "Italian",
+        "el": "Ιταλική"
+      },
+      "emoji": "🍝"
+    },
+    {
+      "slug": "pizza",
+      "name": {
+        "en": "Pizza",
+        "el": "Πίτσα"
+      },
+      "emoji": "🍕"
+    },
+    {
+      "slug": "steakhouse",
+      "name": {
+        "en": "Steakhouse",
+        "el": "Steakhouse"
+      },
+      "emoji": "🥩"
+    },
+    {
+      "slug": "burgers",
+      "name": {
+        "en": "Burgers",
+        "el": "Μπέργκερ"
+      },
+      "emoji": "🍔"
+    },
+    {
+      "slug": "japanese-sushi",
+      "name": {
+        "en": "Japanese & Sushi",
+        "el": "Ιαπωνική & Σούσι"
+      },
+      "emoji": "🍣"
+    },
+    {
+      "slug": "asian",
+      "name": {
+        "en": "Asian",
+        "el": "Ασιατική"
+      },
+      "emoji": "🥢"
+    },
+    {
+      "slug": "chinese",
+      "name": {
+        "en": "Chinese",
+        "el": "Κινέζικη"
+      },
+      "emoji": "🥡"
+    },
+    {
+      "slug": "thai",
+      "name": {
+        "en": "Thai",
+        "el": "Ταϊλανδέζικη"
+      },
+      "emoji": "🍜"
+    },
+    {
+      "slug": "indian",
+      "name": {
+        "en": "Indian",
+        "el": "Ινδική"
+      },
+      "emoji": "🍛"
+    },
+    {
+      "slug": "lebanese-middle-eastern",
+      "name": {
+        "en": "Lebanese & Middle Eastern",
+        "el": "Λιβανέζικη & Μεσανατολική"
+      },
+      "emoji": "🧆"
+    },
+    {
+      "slug": "armenian",
+      "name": {
+        "en": "Armenian",
+        "el": "Αρμένικη"
+      },
+      "emoji": "🥙"
+    },
+    {
+      "slug": "mexican-latin",
+      "name": {
+        "en": "Mexican & Latin",
+        "el": "Μεξικάνικη & Λατινοαμερικάνικη"
+      },
+      "emoji": "🌮"
+    },
+    {
+      "slug": "vegan-vegetarian",
+      "name": {
+        "en": "Vegan & Vegetarian",
+        "el": "Vegan & Χορτοφαγική"
+      },
+      "emoji": "🥦"
+    },
+    {
+      "slug": "brunch-cafe",
+      "name": {
+        "en": "Brunch & Café",
+        "el": "Brunch & Καφέ"
+      },
+      "emoji": "☕"
+    },
+    {
+      "slug": "wine-bar-tapas",
+      "name": {
+        "en": "Wine Bar & Tapas",
+        "el": "Wine Bar & Τάπας"
+      },
+      "emoji": "🍷"
+    },
+    {
+      "slug": "fusion",
+      "name": {
+        "en": "Fusion",
+        "el": "Fusion"
+      },
+      "emoji": "✨"
+    },
+    {
+      "slug": "international",
+      "name": {
+        "en": "International",
+        "el": "Διεθνής"
+      },
+      "emoji": "🌍"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "to-limanaki": [
+    {
+      "base": "demo/to-limanaki/to-limanaki-01",
+      "width": 1920,
+      "height": 1993,
+      "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwAwCdASoQABEAPu1iqU2ppaOiMAgBMB2JQBOmUABRt2xsvHDns4DAAPyMlPNdnHV6z7pEmzyNUV7SNQQO3PFycYvq7AC5pC7y7KgFcm5hgeSxngfJO0+wVBTWNZOVIM7gNK7jf+72UB1U4nFq3V4AAAA="
+    },
+    {
+      "base": "demo/to-limanaki/to-limanaki-02",
+      "width": 1920,
+      "height": 1921,
+      "blurDataURL": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADQAgCdASoQABAAA4BaJbACdGaA2wAqATAthO1QdyyAAP6bfxda86Nda1saz2BZaWbwFd7kHbt4FfqRbF/Y0ht7Dl1XaykSeDGlufbXL+5rLDw0W7b5Pe+Qyv8MGFghNx4vX+YqD9A3Q6q9tuZkXZuPgcD9ReZk8SQpMJd5qaLLmmAVVq/6viAA"
+    },
+    {
+      "base": "demo/to-limanaki/to-limanaki-03",
+      "width": 1920,
+      "height": 1270,
+      "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQAgCdASoQAAsAA4BaJbACdAYrx21roYjeIWAA/vS+2xc8hw3PgByEkekmN32W6pvAD1kBhUlN6xEvW7dYuR4KqNk3dTbXLYBMrNdtR0n45hTJhSgvw09evA7uM3fLdWiPbGMdex/LKlaVIAAAAA=="
+    }
+  ],
+  "anogi-meze-house": [
+    {
+      "base": "demo/anogi-meze-house/anogi-meze-house-01",
+      "width": 1476,
+      "height": 1105,
+      "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQAgCdASoQAAwAA4BaJbACdAYtVaen68xgAP7CsbHavzgxCmg4dIJRD5VHFye3fgq8s6eZ8O4MwmnXQ//fn99jeh5HNOYgQoMRWxC9/7x2YpOzgEiiAYqK2s+OORpB960xpqVet452iu4vBNj8gAAA"
+    },
+    {
+      "base": "demo/anogi-meze-house/anogi-meze-house-02",
+      "width": 1920,
+      "height": 1440,
+      "blurDataURL": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAQCdASoQAAwAA4BaJbACdAC77BkAAP7HZT7a/8L+x7W+1SyoqSLsoCnszN/M8MHiC7/YIHtiiQTDokE0x8sdb+/APg1ZbDxX84d2er4566ssL2YAAA=="
+    },
+    {
+      "base": "demo/anogi-meze-house/anogi-meze-house-03",
+      "width": 800,
+      "height": 600,
+      "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoQAAwAA4BaJQBOgMW5lk/Vx2AA9gI8ji4NK1cWAekiF6bVl6nNuNqO96g3OGWp7fLh/b2QdLTjIj7MRNEFMTLk3XAUQaNnYe+5GGmXKKJ+AAAA"
+    }
+  ],
+  "elia-thymari": [
+    {
+      "base": "demo/elia-thymari/elia-thymari-01",
+      "width": 1920,
+      "height": 1920,
+      "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAABQAgCdASoQABAAA4BaJYwCdAEf8XvxowEXPQAA/u+ioHxE9AA3K8v2bkqX6McGsuAcCDBW7cUWCgBdS1cpPdcBakzVT9+BbIjdXUgdYWsT4NCj7J5u5ojVaEGEJiAA"
+    },
+    {
+      "base": "demo/elia-thymari/elia-thymari-02",
+      "width": 1920,
+      "height": 1280,
+      "blurDataURL": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAQCdASoQAAsAA4BaJbACdACTe1afgAD+V2in/bQcdWpGwiMDTkghlbd9x+pywD0jKbsFE5xMrb0zpg71wgaPLB6gZaNj3k4YgAAA"
+    },
+    {
+      "base": "demo/elia-thymari/elia-thymari-03",
+      "width": 1920,
+      "height": 1440,
+      "blurDataURL": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAQAgCdASoQAAwAA4BaJbACdAYu5U2n/sHgAP7eLjJOSUo626+aw2KflkUdCRaaj2GOWo9XG29rhG8HRVP/xZQ+AVJsjhl6Uu5953KE4zCuKA3rySCPi2FqEmf/tZGdg0/mPzGRAydGO4S+AAA="
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "_help": "Intake file for one restaurant. Keys starting with '_' are ignored by the scripts. Fill from the user's dropped description; leave anything unknown as null and the validator will tell you what is required. Weekdays are ISO: 1=Mon … 7=Sun. Times are 24h 'HH:MM' local to the restaurant.",
+
+  "slug": null,
+  "_slug": "ASCII kebab-case, unique across ALL countries, e.g. 'ta-piatakia-limassol'. Transliterate Greek names. Include the area if the name is generic.",
+
+  "country": "CY",
+  "region": null,
+  "area": null,
+  "_region_area": "slugs from assets/config/countries.json — region is required, area is optional but strongly preferred (tourists search by area).",
+
+  "status": "published",
+  "booking_mode": "instant",
+  "_booking_mode": "instant = live slots (default) | request = pending until the restaurant confirms | phone_only = show phone/WhatsApp only",
+
+  "price_band": null,
+  "_price_band": "1 = under €15pp, 2 = €15–30, 3 = €30–60, 4 = €60+ (main + drink, rough)",
+
+  "translations": {
+    "en": { "name": null, "tagline": null, "description": null, "is_machine_translated": false },
+    "el": { "name": null, "tagline": null, "description": null, "is_machine_translated": false }
+  },
+  "_translations": "Both locales required. If the user only gave one language, write the other yourself and set is_machine_translated: true so the dashboard flags it for review. tagline ≤ 90 chars. description 80–200 words, tourist-facing, no marketing fluff.",
+
+  "cuisines": [],
+  "_cuisines": "1–3 slugs from assets/config/cuisines.json, most specific first (the first one is primary).",
+
+  "features": [],
+  "_features": "slugs from assets/config/features.json — only what the description actually supports.",
+
+  "contact": {
+    "phone": null,
+    "whatsapp": null,
+    "email": null,
+    "website": null,
+    "instagram": null,
+    "menu_url": null,
+    "google_maps_url": null
+  },
+  "_contact": "Phones in E.164 (+357…). instagram as handle without @. google_maps_url can be used by scripts/geocode.mjs to extract coordinates.",
+
+  "location": {
+    "address_line": null,
+    "postcode": null,
+    "lat": null,
+    "lng": null
+  },
+  "_location": "lat/lng required. If missing: node scripts/geocode.mjs \"<address>\" or paste a Google Maps link into contact.google_maps_url and run the same script.",
+
+  "opening_hours": [
+    { "weekdays": [1, 2, 3, 4, 5, 6, 7], "opens": "12:00", "closes": "23:00" }
+  ],
+  "_opening_hours": "Display hours only (the 'open now' badge). Use several entries for split shifts or different weekend hours. Omit a weekday entirely = closed that day.",
+
+  "service_periods": [
+    { "name": { "en": "Lunch", "el": "Μεσημεριανό" }, "weekdays": [1, 2, 3, 4, 5, 6, 7], "first_seating": "12:00", "last_seating": "15:00" },
+    { "name": { "en": "Dinner", "el": "Δείπνο" }, "weekdays": [1, 2, 3, 4, 5, 6, 7], "first_seating": "18:30", "last_seating": "22:00", "turn_minutes": 120 }
+  ],
+  "_service_periods": "Bookable windows — this is what generates time slots. last_seating is the LAST slot offered, not closing time (closing minus turn time is a good default). Optional per-period: slot_interval_minutes, turn_minutes, max_covers_per_slot (pacing).",
+
+  "booking_rules": {
+    "min_party": 1,
+    "max_party": 8,
+    "lead_time_minutes": 60,
+    "max_advance_days": 60,
+    "turn_minutes": 90,
+    "slot_interval_minutes": 30
+  },
+
+  "tables": [],
+  "tables_are_placeholder": true,
+  "_tables": "Table inventory drives availability. If the user gave real numbers, list them and set tables_are_placeholder false. If unknown, leave [] and the script seeds a placeholder set from the stated capacity (or 4×2, 4×4, 2×6 if no capacity known) and flags the restaurant for the owner to fix in the dashboard.",
+  "capacity_covers": null,
+
+  "photos": [],
+  "_photos": "Optional. Leave [] to use every image in the intake folder in filename order (first = cover). Or list objects: {\"file\": \"terrace.jpg\", \"alt\": {\"en\": \"…\", \"el\": \"…\"}, \"is_cover\": true}.",
+
+  "is_featured": false,
+  "owner_notes": null,
+  "_owner_notes": "Internal only (e.g. 'owner is Maria, WhatsApp her for menu changes'). Never rendered."
+}

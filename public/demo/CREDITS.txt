@@ -1,0 +1,11 @@
+Demo food photography — Wikimedia Commons.
+
+public/demo/to-limanaki/to-limanaki-01-*.webp — Gatorfan252525, CC BY-SA 4.0, via Wikimedia Commons — https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Greek-style_grilled_octopus_with_olive_oil%2C_lemon%2C_butter_and_parsley.jpg/1920px-Greek-style_grilled_octopus_with_olive_oil%2C_lemon%2C_butter_and_parsley.jpg
+public/demo/to-limanaki/to-limanaki-02-*.webp — Daderot, CC0, via Wikimedia Commons — https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Fried_calamari_with_sauces_-_Massachusetts.jpg/1920px-Fried_calamari_with_sauces_-_Massachusetts.jpg
+public/demo/to-limanaki/to-limanaki-03-*.webp — Wiki.cullin, CC BY-SA 4.0, via Wikimedia Commons — https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Grilled_Game_Meat_-_Prawns_-_Calamari_-_Frites_-_on_a_white_plate.jpg/1920px-Grilled_Game_Meat_-_Prawns_-_Calamari_-_Frites_-_on_a_white_plate.jpg
+public/demo/anogi-meze-house/anogi-meze-house-01-*.webp — Cyprus Tourism CH, CC BY 2.0, via Wikimedia Commons — https://upload.wikimedia.org/wikipedia/commons/5/54/Vin_et_gastronomie_chypriotes.jpg
+public/demo/anogi-meze-house/anogi-meze-house-02-*.webp — Hmioannou, CC BY 3.0, via Wikimedia Commons — https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Grilled_Halloumi.jpg/1920px-Grilled_Halloumi.jpg
+public/demo/anogi-meze-house/anogi-meze-house-03-*.webp — Siqbal, public domain, via Wikimedia Commons — https://upload.wikimedia.org/wikipedia/commons/f/f7/Souvlaki_Platter.jpg
+public/demo/elia-thymari/elia-thymari-01-*.webp — boboseiptu, CC BY-SA 4.0, via Wikimedia Commons — https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Kleftiko_con_verdure_e_feta.jpg/1920px-Kleftiko_con_verdure_e_feta.jpg
+public/demo/elia-thymari/elia-thymari-02-*.webp — EUGASTRONOMES, CC BY-SA 4.0, via Wikimedia Commons — https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Greek_feta_salad.jpg/1920px-Greek_feta_salad.jpg
+public/demo/elia-thymari/elia-thymari-03-*.webp — JIP, CC BY-SA 4.0, via Wikimedia Commons — https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Moussaka_at_Taverna_Zorbas.jpg/1920px-Moussaka_at_Taverna_Zorbas.jpg
