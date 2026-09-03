@@ -57,6 +57,38 @@ node scripts/add-restaurant.mjs intake/<slug>
 Adds or updates a restaurant from `intake/<slug>/` (photos + `restaurant.json`). Validate first
 with `node scripts/validate-restaurant.mjs intake/<slug>/restaurant.json`.
 
+## Deploying
+
+`main` is connected to Vercel: **push to `main` and it deploys itself**. Pull requests get their
+own preview URL, so you can look at a change before it reaches the demo domain.
+
+- Production: https://dinevo-wine.vercel.app
+- Project: `dinevo` under `vkarakontis-9369s-projects`
+
+Nothing needs deploying by hand. If you ever do need to, `npx vercel --prod` works — but stop
+`npm run dev` first: `next build` and `next dev` share the `.next` directory, and building while
+the dev server is running corrupts its chunks and produces confusing MIME-type errors in the
+browser. `rm -rf .next` clears it.
+
+**Environment variables live in Vercel, not in the repo.** `.env.local` is git-ignored and is
+never needed to work on the site — with no Supabase keys the app runs in demo mode. The only
+variable currently set in production is `NEXT_PUBLIC_SITE_URL`; without it, canonical URLs,
+JSON-LD and the sitemap all fall back to `localhost`.
+
+## Working on this together
+
+- Branch off `main`, open a PR, let the preview build check it.
+- Before pushing: `npm run typecheck && npm run lint && npm run build`.
+- After touching anything under `supabase/` or the booking SQL:
+  `node scripts/test-booking-engine.mjs` — it exercises the double-booking guarantee.
+- Read `CLAUDE.md` before your first change. It records the conventions and, more usefully, the
+  handful of mistakes that have already been made once (ISR vs. `searchParams`, the cookieless
+  Supabase client, emails needing `after()`) so they don't get made twice.
+- `DESIGN.md` is the design contract — colour roles, type, motion, layout. Use the tokens in
+  `src/app/globals.css`; never hardcode a hex, or dark mode and future re-themes break.
+- Every user-facing string goes in **both** `messages/en.json` and `messages/el.json`, in the
+  same change. The build does not catch a missing Greek key — the page renders the key name.
+
 ## Renaming the product
 
 Edit `name` and `wordmark` in `src/config/brand.ts`. Nothing else hardcodes the name — the header,
